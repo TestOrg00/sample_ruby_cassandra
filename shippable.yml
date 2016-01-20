@@ -6,7 +6,7 @@ services:
 install:
   - gem install cassandra
   
-build_image: shippableimg/minv234
+#build_image: shippableimg/minv234
 
 script:
   - cassandra-cli -host localhost -port 9160 -f schema.txt
