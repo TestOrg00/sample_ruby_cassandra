@@ -16,8 +16,12 @@ script:
 #archive: true
 
 notifications:
-  email: 
-    - varsha@shippable.com
+  recipients:
+    email: 
+      - varsha@shippable.com
+      - test_ci2@yahoo.in
+    on_success: always
+    on_failure: always
   irc:
     pull_requests: true
     channels:
