@@ -6,7 +6,7 @@ services:
 install:
   - gem install cassandra
   
-#build_image: shippable/minv2
+build_image: shippable/minv2
 
 script:
   - cassandra-cli -host localhost -port 9160 -f schema.txt
@@ -18,6 +18,8 @@ archive: true
 notifications:
   email: 
     varsha@shippable.com
-  irc: "chat.freenode.net#test-irc"
+  irc:
+   pull_requests: true
+    channels: "chat.freenode.net#test-irc"
   
 #cache: true
