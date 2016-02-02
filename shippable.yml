@@ -5,11 +5,26 @@ services:
 
 install:
   - gem install cassandra
+  
+#build_image: shippableimg/minv234
 
 script:
   - cassandra-cli -host localhost -port 9160 -f schema.txt
   - ruby sample.rb
   - cassandra-cli -host localhost -port 9160 -f removeKeyspace.txt
   
-archive: true
+#archive: true
 
+notifications:
+  recipients:
+    email: 
+      - varsha@shippable.com
+      - test_ci2@yahoo.in
+    on_success: change
+    on_failure: always
+  irc:
+    pull_requests: true
+    channels:
+      - "chat.freenode.net#test-irc"
+      
+cache: true
