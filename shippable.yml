@@ -13,3 +13,8 @@ script:
   
 archive: true
 
+cache: true
+
+notifications:
+  email: 
+    test.ci@yopmail.com
